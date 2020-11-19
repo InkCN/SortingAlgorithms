@@ -1,5 +1,8 @@
-
-public class MergeSort implements ISort{
+/**
+ * 归并算法：归+并
+ * 核心在于并算法
+ */
+public class MergeSort implements ISort {
 
     private static int[] aux;
 
@@ -18,14 +21,12 @@ public class MergeSort implements ISort{
 
     private static void merge(int[] a, int low, int mid, int high) {
         int i = low, j = mid + 1;
-        for (int k = low; k <= high; k++) {
+        for (int k = low; k <= high; k++)
             aux[k] = a[k];
-        }
-        for (int k = low; k <= high; k++) {
+        for (int k = low; k <= high; k++)
             if (i > mid) a[k] = aux[j++];
             else if (j > high) a[k] = aux[i++];
-            else if (a[j] < a[i]) a[k] = aux[j++];
+            else if (aux[j] < aux[i]) a[k] = aux[j++];
             else a[k] = aux[i++];
-        }
     }
 }
