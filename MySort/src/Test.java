@@ -5,12 +5,13 @@ public class Test {
 
 //        printResult(new QuickSort());//打印快排算法
 
-        printResult(new MergeSort());//打印归并算法
+//        printResult(new MergeSort());//打印归并算法
 
 
     }
 
     public static int[] getArray(int n) {
+        if (n<1) throw new RuntimeException();
         int[] arr = new int[n];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * arr.length);
@@ -25,6 +26,7 @@ public class Test {
      * @return 结果
      */
     public static boolean isSorted(int[] data) {
+        if (data.length<3) return true;
         boolean flag1 = false,flag2 = false;
         //数组是否为升序
         for (int i = 0; i < data.length-1; i++) {
