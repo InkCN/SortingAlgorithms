@@ -24,9 +24,9 @@ public class MergeSort implements ISort {
         for (int k = low; k <= high; k++)
             aux[k] = a[k];
         for (int k = low; k <= high; k++)
-            if (i > mid) a[k] = aux[j++];
-            else if (j > high) a[k] = aux[i++];
-            else if (aux[j] < aux[i]) a[k] = aux[j++];
-            else a[k] = aux[i++];
+            if      (i > mid)           a[k] = aux[j++];
+            else if (j > high)          a[k] = aux[i++];
+            else if (aux[j] < aux[i])   a[k] = aux[j++];
+            else                        a[k] = aux[i++];
     }
 }
