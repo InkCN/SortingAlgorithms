@@ -1,6 +1,6 @@
 /**
  * 归并算法：归+并
- * 核心在于并算法
+ * 核心在于并算法，要重点留意
  */
 public class MergeSort implements ISort {
 
