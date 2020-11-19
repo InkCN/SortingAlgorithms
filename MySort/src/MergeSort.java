@@ -19,10 +19,17 @@ public class MergeSort implements ISort {
         merge(arr, low, mid, high);
     }
 
+    //将a[low..mid]和a[mid+1..high]归并
     private static void merge(int[] a, int low, int mid, int high) {
         int i = low, j = mid + 1;
-        for (int k = low; k <= high; k++)
-            aux[k] = a[k];
+
+        //将a[low..high]复制到aux[low..high]
+        //相当于对原数组a进行备份
+        //关于aux数组(aux数组本质就是一个临时存放数字的仓库)
+        for (int k = low; k <= high; k++) aux[k] = a[k];
+
+        //下面这个for循环的作用是：排序数组a
+        //通过条件判断，从aux数组中取出数字赋值给原数组a。
         for (int k = low; k <= high; k++)
             if      (i > mid)           a[k] = aux[j++];
             else if (j > high)          a[k] = aux[i++];
