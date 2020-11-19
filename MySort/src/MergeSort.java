@@ -1,16 +1,9 @@
-import java.util.Arrays;
 
-public class MergeSort {
-    public static void main(String[] args) {
-        int[] arr = QuickSort.getArray(15);
-        System.out.println("排序前：" + Arrays.toString(arr));
-        sort(arr);
-        System.out.println("排序后：" + Arrays.toString(arr));
-    }
+public class MergeSort implements ISort{
 
     private static int[] aux;
 
-    public static void sort(int[] a) {
+    public void sort(int[] a) {
         aux = new int[a.length];
         sort(a, 0, a.length - 1);
     }

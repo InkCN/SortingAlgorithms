@@ -1,14 +1,6 @@
-import java.util.Arrays;
+public class QuickSort implements ISort{
 
-public class QuickSort {
-    public static void main(String[] args) {
-        int[] arr = getArray(25);
-        System.out.println("排序前：" + Arrays.toString(arr));
-        quickSort(arr);
-        System.out.println("排序后：" + Arrays.toString(arr));
-    }
-
-    public static void quickSort(int[] arr) {
+    public void sort(int[] arr) {
         quickSort(arr, 0, arr.length - 1);
     }
 
@@ -38,11 +30,4 @@ public class QuickSort {
 
     }
 
-    public static int[] getArray(int n) {
-        int[] arr = new int[n];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * arr.length);
-        }
-        return arr;
-    }
 }
