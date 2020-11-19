@@ -22,7 +22,7 @@ public class Test {
      * 判断两次，先判断是否是升序(1..n)
      * 再判断是否是降序(n..1)
      * @param data 需要判断的数组
-     * @return
+     * @return 结果
      */
     public static boolean isSorted(int[] data) {
         boolean flag1 = false,flag2 = false;
@@ -44,11 +44,7 @@ public class Test {
                 break;
             }
         }
-        if (flag1 || flag2) {
-            return true;//有一个为真，即是已经排过序了
-        } else {
-            return  false;
-        }
+        return flag1 || flag2;//有一个为真，即是已经排过序了
     }
 
     public static void printResult(ISort sort){
