@@ -1,11 +1,21 @@
 import java.util.Arrays;
 
+/**
+ * 测试数组的长度：100000（十万）
+ */
 public class Test {
     public static void main(String[] args) {
+//        printResult(new BubbleSort());//测试冒泡排序--18030ms
 
-//        printResult(new QuickSort());//打印快排算法
+//        printResult(new InsertSort());//测试插入排序--6172ms
 
-//        printResult(new MergeSort());//打印归并算法
+//        printResult(new SelectSort());//测试选择排序--5402ms
+
+//        printResult(new ShellSort());//测试希尔排序--338ms
+
+//        printResult(new QuickSort());//测试快排排序--95ms
+
+//        printResult(new MergeSort());//测试归并排序--85ms
 
 
     }
@@ -52,10 +62,17 @@ public class Test {
     }
 
     public static void printResult(ISort sort) {
-        int[] arr = Test.getArray(15);
+//        int num = (int)(Math.random() * 100000) + 15;
+        int num = 100000;
+        int[] arr = Test.getArray(num);
+        System.out.println("测试数组长度："+num);
+        long start = System.currentTimeMillis();
         System.out.println("排序前：" + Arrays.toString(arr));
         sort.sort(arr);
         System.out.println("排序后：" + Arrays.toString(arr));
-        System.out.print("是否有序：" + isSorted(arr));
+        long end = System.currentTimeMillis();
+        long time=end-start;
+        System.out.println("是否有序：" + isSorted(arr));
+        System.out.print("消耗时间：" + time+"毫秒");
     }
 }
